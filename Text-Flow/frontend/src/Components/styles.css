@@ -1,0 +1,25 @@
+.messages{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    /* scrollbar-width: none; */
+}
+/* .sendercolor{
+    color: black;
+    text-decoration: black;
+} */
+.senderside{
+    border-color: black;
+}
+/* .hoveronchatname{
+    background: none;
+}
+.hoveronchatname:hover{
+    background-color: rgb(43, 33, 20);
+} */
+.indicator{
+    height: 50px;
+    width: 50px;
+    /* padding-left: 20px; */
+    text-indent: 20px;
+}
