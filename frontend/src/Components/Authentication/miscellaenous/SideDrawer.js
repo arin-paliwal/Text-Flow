@@ -19,8 +19,9 @@ import {
   useToast,
   Spinner,
 } from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
-import { BellIcon, ChatIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { BellIcon, ChatIcon, ChevronDownIcon, EmailIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 import { ChatState } from "../../../Context/ChatProvider";
 import ProfileModal from "./profileModal";
 import axios from "axios";
@@ -29,8 +30,6 @@ import UserListItem from "../../UserAvatar/UserListItem";
 import { getSender } from "../../../config/ChatLogics";
 import { Effect } from "react-notification-badge"
 import NotificationBadge from "react-notification-badge/lib/components/NotificationBadge";
-// import { registerUser, authUser, allUsers } from
-
 function SideDrawer() {
   const toast = useToast();
   const [search, setSearch] = useState("");
@@ -38,11 +37,16 @@ function SideDrawer() {
   const [loading, setloading] = useState(false);
   const [loadingChat, setloadingChat] = useState();
   const { user, setSelectedChat, chats, setChats, notification, setnotification } = ChatState();
+  const history = useHistory();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const logoutHandler = () => {
+    localStorage.removeItem("userInfo");
+    history.push("/");
+  };
   const handleSearch = async () => {
     if (!search) {
       toast({
-        title: "Please Enter something in search",
+        title: "Search Something",
         status: "info",
         duration: 2500,
         isClosable: true,
@@ -85,7 +89,6 @@ function SideDrawer() {
       setloadingChat(false);
       onClose();
     } catch (error) {
-      // console.log(error);
       toast({
         title: "Error Fetching the chat",
         description: "error.message",
@@ -114,35 +117,35 @@ function SideDrawer() {
             </Text>
           </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Bahnschrift">
-          {/* {user.name} */}
+        <Text fontSize="2xl" fontFamily="Work sans">
+          {/* Welcome to Text Flow ! */}
         </Text>
         <div>
           <Menu>
             <MenuButton p={2}>
               <NotificationBadge
-              count={notification.length}
-              effect={Effect.ROTATE_X}
+                count={notification.length}
+                effect={Effect.ROTATE_X}
               />
-              <BellIcon />
+              <EmailIcon />
             </MenuButton>
             <MenuList p="2">
               <center>
                 {!notification.length && "No New Messages"}
-                {notification.map(notif=>(
-                  <MenuItem key={notif._id} onClick={()=>{
+                {notification.map(notif => (
+                  <MenuItem key={notif._id} onClick={() => {
                     setSelectedChat(notif.chat);
-                    setnotification(notification.filter((n)=>n!==notif));
+                    setnotification(notification.filter((n) => n !== notif));
                   }}>
                     {notif.chat.isGroupChat
-                    ? `New Message in ${notif.chat.chatName}`
-                  :
-                      `New Message from ${getSender(user,notif.chat.users)}`
-                  }
+                      ? `New Message in ${notif.chat.chatName}`
+                      :
+                      `New Message from ${getSender(user, notif.chat.users)}`
+                    }
                   </MenuItem>
                 ))}
               </center>
-              
+
             </MenuList>
           </Menu>
           <Menu>
@@ -158,7 +161,7 @@ function SideDrawer() {
               <ProfileModal user={user}>
                 <MenuItem padding="13px">My Profile</MenuItem>
               </ProfileModal>
-              <MenuItem padding="13px">
+              <MenuItem padding="13px" onClick={logoutHandler}>
                 {/* history.push("/chat"); */}
                 Log Out
               </MenuItem>
@@ -178,7 +181,7 @@ function SideDrawer() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Button onClick={handleSearch}>Go</Button>
+              <Button onClick={handleSearch}><Search2Icon/></Button>
             </Box>
             {loading ? (
               <ChatLoading />

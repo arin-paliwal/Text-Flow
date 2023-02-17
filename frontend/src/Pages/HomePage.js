@@ -3,6 +3,7 @@ import { Container, Box, Text, Tab, TabPanel, Tabs, TabList, TabPanels } from '@
 import Login from '../Components/Authentication/login';
 import Signup from '../Components/Authentication/Signup';
 const HomePage = () => {
+  
   return (
     <Container maxW='xl' centerContent>
       <Box

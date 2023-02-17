@@ -36,7 +36,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
       toast({
         title: "Only admins can remove someone!",
         status: "error",
-        duration: 5000,
+        duration: 2500,
         isClosable: true,
         position: "bottom",
       });
@@ -68,7 +68,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         title: "Error Occured!",
         description: error.response.data.message,
         status: "error",
-        duration: 5000,
+        duration: 2500,
         isClosable: true,
         position: "bottom",
       });
@@ -81,7 +81,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
       toast({
         title: "User Already in group!",
         status: "error",
-        duration: 5000,
+        duration: 2500,
         isClosable: true,
         position: "bottom",
       });
@@ -92,7 +92,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
       toast({
         title: "Only admins can add someone!",
         status: "error",
-        duration: 5000,
+        duration: 2500,
         isClosable: true,
         position: "bottom",
       });
@@ -141,14 +141,11 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      // console.log("Every thing is running fine");
       const { data } = await axios.put(
         `/api/chat/rename`,
         { chatId: selectedChat._id, chatName: groupChatName },
         config
       );
-      // console.log("Every thing is running fine");
-
       setSelectedChat(data);
       setfetchAgain(fetchAgain);
       setRenameLoading(false);
@@ -225,19 +222,19 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
             </Box>
             <FormControl display="flex">
               <Input
-                placeholder="Chat Name"
+                placeholder="Rename Group"
                 mb={3}
                 value={groupChatName}
                 onChange={(e) => setGroupChatName(e.target.value)}
               />
               <Button
                 variant="solid"
-                colorScheme="green"
+                colorScheme="blue"
                 ml={1}
                 isLoading={renameLoading}
                 onClick={handleRename}
               >
-                Update
+                Rename
               </Button>
             </FormControl>
             <FormControl display="flex">
@@ -262,7 +259,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
           <ModalFooter>
             <Button
               onClickCapture={() => handleRemove(user)}
-              colorScheme="green"
+              colorScheme="red"
             >
               Leave Group
             </Button>
