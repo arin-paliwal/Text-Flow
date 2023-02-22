@@ -26,7 +26,7 @@ const ScrollableChat = ({ messages }) => {
                   cursor="pointer"
                   name={m.sender.name}
                   src={m.sender.pic}
-                />
+                ></Avatar>
               </Tooltip>
             )}
             <span
@@ -45,6 +45,8 @@ const ScrollableChat = ({ messages }) => {
                 marginTop: isSameUser(messages, m, i, user._id) ? 3 : 10,
               }}
             >
+              {/* {" "}
+              <div class="sendername">{m.sender.name}</div> */}
               {" "}
               {m.content}
             </span>
