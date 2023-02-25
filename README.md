@@ -3,7 +3,7 @@
 # Text-Flow-Chatting-Web-Application
 </center>
 
-- ### Text Flow chatting web application is a modern, user-friendly platform that allows users to engage in real-time conversations with each other. The application is built using a variety of web development technologies, including popular web frameworks such as React for the front-end, Node.js and Express for the back-end, and MongoDB for the
+- ### Text Flow chatting web application is a modern, user-friendly platform that allows users to engage in real-time conversations with each other. The application is built using a variety of web development technologies, including popular web frameworks such as React for the front-end, Node.js and Express for the back-end, and MongoDB for the database.
 
 - ### In addition to the core messaging functionality, This application also includes features such as push notifications, real-time messaging and typing indicators using socket.io and message history 
 
