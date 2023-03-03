@@ -34,9 +34,9 @@
 ### 4. Options of Renaming a Chat and adding members(by everyone present)
 ### 5. Option of Removing a user(by admin of the group only)
 ### 6. Login and Signup for each user and authorization by JWT.
-### 7. Password is encrypted and even administrator can't read the password, it is stored in coded form in database.
-### 8. User can set their profile picture
-### 9. Whole Chat Web Application has a minimalistic UI Design and is mobile responsive too.
+### 7. Password is encrypted and even administrator can't read the password, it is stored in encrypted form in database using bcryptjs.
+### 8. User can set their profile picture.
+### 9. The Chat Web Application has a minimalistic UI Design and is mobile responsive too.
 
 <hr>
 
