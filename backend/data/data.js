@@ -1,3 +1,5 @@
+// dummy data that has entered
+
 const chats = [
     {
         isGroupChat: false,
