@@ -248,11 +248,3 @@ const SingleChat = ({ fetchAgain, setfetchAgain }) => {
 export default SingleChat;
 // module.exports=SingleChat
 
-
-
-
-{/* <Lottie
-  options={defaultOptions}
-  width={70}
-  style={{ marginBottom: 15, marginLeft: 0 }}
-/>  */}

@@ -146,6 +146,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         { chatId: selectedChat._id, chatName: groupChatName },
         config
       );
+      // console.log("Till here update group modal running fine",data);
       setSelectedChat(data);
       setfetchAgain(fetchAgain);
       setRenameLoading(false);

@@ -12,7 +12,7 @@
 
 <hr>
 
-![Repository Visitors](https://visitor-badge.glitch.me/badge?page_id=arin-paliwal.Text-Flow)
+![Repository Visitors]((https://visitor-badge.glitch.me/badge?page_id=arin-paliwal.Text-Flow)
 
 ## It is made by using :
 
