@@ -19,7 +19,7 @@ import {
   useToast,
   Spinner,
 } from "@chakra-ui/react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { BellIcon, ChatIcon, ChevronDownIcon, EmailIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
 import { ChatState } from "../../../Context/ChatProvider";
@@ -37,11 +37,11 @@ function SideDrawer() {
   const [loading, setloading] = useState(false);
   const [loadingChat, setloadingChat] = useState();
   const { user, setSelectedChat, chats, setChats, notification, setnotification } = ChatState();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.push("/");
+    navigate("/");
   };
   const handleSearch = async () => {
     if (!search) {
@@ -162,7 +162,7 @@ function SideDrawer() {
                 <MenuItem padding="13px">My Profile</MenuItem>
               </ProfileModal>
               <MenuItem padding="13px" onClick={logoutHandler}>
-                {/* history.push("/chat"); */}
+                {/* navigate("/chat"); */}
                 Log Out
               </MenuItem>
             </MenuList>
