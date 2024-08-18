@@ -11,12 +11,12 @@ const cors = require("cors");
 const corsOptions = {
   origin: ["http://localhost:3000", "https://text-flow-dev.vercel.app"],
 };
-app.use(cors(corsOptions));
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 dotenv.config();
 connectDB();
 const app = express();
-app.use(express.json()); // to accept json data
+app.use(express.json());
+app.use(cors(corsOptions));
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
