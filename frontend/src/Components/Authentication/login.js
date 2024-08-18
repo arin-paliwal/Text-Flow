@@ -39,7 +39,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "/api/user/login",
+        "https://text-flow.onrender.com/api/user/login",
         { email, password },
         config
       );

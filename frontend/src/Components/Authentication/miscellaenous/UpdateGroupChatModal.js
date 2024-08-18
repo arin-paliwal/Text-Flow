@@ -51,7 +51,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/groupremove`,
+        `https://text-flow.onrender.com/api/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -107,7 +107,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/groupadd`,
+        `https://text-flow.onrender.com/api/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -142,7 +142,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/rename`,
+        `https://text-flow.onrender.com/api/chat/rename`,
         { chatId: selectedChat._id, chatName: groupChatName },
         config
       );
@@ -184,7 +184,7 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(`https://text-flow.onrender.com/api/user?search=${search}`, config);
       // console.log(data);
       setLoading(false);
       setSearchResult(data);

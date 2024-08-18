@@ -49,7 +49,7 @@ const SingleChat = ({ fetchAgain, setfetchAgain }) => {
         },
       };
       setloading(true);
-      const { data } = await axios.get(`/api/message/${selectedChat._id}`,
+      const { data } = await axios.get(`https://text-flow.onrender.com/api/message/${selectedChat._id}`,
       config
       );
       console.log(messages);
@@ -112,7 +112,7 @@ const SingleChat = ({ fetchAgain, setfetchAgain }) => {
         // console.log("till config running fine");
         setnewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://text-flow.onrender.com/api/message",
           {
             // console.log("I am present here"),
             content: newMessage,

@@ -61,7 +61,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/api/user?search=${search}`, congif);
+      const { data } = await axios.get(`https://text-flow.onrender.com/api/user?search=${search}`, congif);
       setloading(false);
       setsearchResult(data);
     } catch (error) {
@@ -83,7 +83,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post("/api/chat", { userId }, config);
+      const { data } = await axios.post("https://text-flow.onrender.com/api/chat", { userId }, config);
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
       setloadingChat(false);
