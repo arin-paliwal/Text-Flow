@@ -135,11 +135,11 @@ frontend/
 
 ### Hosted URL
 
-Access the live application here: [TextFlow](https://text-flow-dev.vercel.app)
+Access the live application here: [TextFlow] (https://text-flow-dev.vercel.app)
 
 ### Postman Collection
 
-You can find the Postman collection for API testing here: [Postman Collection URL][(your-postman-collection-url](https://www.postman.com/paliwalarin/workspace/text-flow-full-stack))
+You can find the Postman collection for API testing here: [Postman Collection URL] [(your-postman-collection-url](https://www.postman.com/paliwalarin/workspace/text-flow-full-stack))
 
 ## License
 
