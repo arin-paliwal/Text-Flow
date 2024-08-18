@@ -108,10 +108,9 @@ const Login = () => {
         colorScheme="green"
         width="100%"
         onClick={() => {
-          setEmail("admin@textflow.com")
-          setPassword("admin@textflow.com")
+          setEmail("arin@gmail.com")
+          setPassword("arinarin1234")
         }
-      // onClick={submHandler}
       }
       >
         Guest Login
