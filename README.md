@@ -91,6 +91,7 @@ frontend/
 
 - Node.js
 - MongoDB
+- Code Editor
 
 ### Installation
 
