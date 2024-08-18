@@ -146,10 +146,18 @@ const UpdateGroupChatModal = (setfetchAgain, fetchAgain, fetchMessages) => {
         { chatId: selectedChat._id, chatName: groupChatName },
         config
       );
-      // console.log("Till here update group modal running fine",data);
-      setSelectedChat(data);
-      setfetchAgain(fetchAgain);
-      setRenameLoading(false);
+      // setSelectedChat(data);
+      // setfetchAgain(!fetchAgain);
+      // setRenameLoading(false);
+      toast({
+        title: "Group Renamed Successfully",
+        status: "success",
+        duration: 2500,
+        isClosable: true,
+        position: "bottom",
+      })
+      window.location.reload();
+      return
     } catch (error) {
       toast({
         title: "Error Occured! Cannot Rename the Group",
