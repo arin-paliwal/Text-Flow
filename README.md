@@ -134,9 +134,6 @@ frontend/
    npm start
    ```
 
-### Hosted URL
-
-Access the live application here: [TextFlow](https://text-flow-dev.vercel.app)
 
 ### Postman Collection
 
